@@ -1,7 +1,7 @@
 package org.example;
 
 import org.example.*;   //bring in classes from part A via Jitpack
-
+import org.joda.time.DateTime;
 public class Main {
     public static void main(String[] args) {
 
@@ -45,9 +45,11 @@ public class Main {
         Module soft = new Module("Programming 3", "CT417", lec1);                           //Creating module objects
         Module soc1 = new Module("System on Chip Design I", "EE451", lec2);
         Module soc2 = new Module("System on Chip Design II","EE452", lec2);
-        Module mob = new Module("Mobile Networks Architecture and Service", "EE4101", lec3);
+        Module mob  = new Module("Mobile Networks Architecture and Service", "EE4101", lec3);
         Module esap = new Module("Embedded Systems Applications Programming", "EE347", lec4);
-        Module dsp = new Module("Digital Signal Processing", "EE445", lec5);
+        Module dsp  = new Module("Digital Signal Processing", "EE445", lec5);
+
+        System.out.println("Module objects instantiated");
 
         lec1.setModuleTeaching(soft);
         lec2.setModuleTeaching(soc1);
@@ -68,12 +70,70 @@ public class Main {
         System.out.println("Adding student that is already enrolled to module to see 'Student already enrolled' message");
         soft.addStudent(stud1);    //should return that student is already enrolled
 
+        soc1.addStudent(stud1);         //Adding students to System on chips modules
+        soc1.addStudent(stud3);
+        soc1.addStudent(stud5);
+
         soc2.addStudent(stud1);
         soc2.addStudent(stud3);
         soc2.addStudent(stud5);
 
+
+        mob.addStudent(stud1);
+        mob.addStudent(stud2);
+        mob.addStudent(stud3);
+
+        esap.addStudent(stud4);
+        esap.addStudent(stud5);
+
+
+        dsp.addStudent(stud1);
+        dsp.addStudent(stud2);
+        dsp.addStudent(stud3);
+        dsp.addStudent(stud4);
+        dsp.addStudent(stud5);
+
+
+
+
+      // soft.listStudentsEnrolled();
+      // soc2.listStudentsEnrolled();
+      // soc2.listStudentsEnrolled();
+
+        CourseProgramme ece = new CourseProgramme("Electronic and Computer Engineering", new DateTime(2019,9,5,9,0), new DateTime(2024, 5, 6, 17,0) );
+        CourseProgramme compsci = new CourseProgramme("Computer Science", new DateTime(2019,9,5,9,0), new DateTime(2024, 5, 6, 17,0));
+
+
+       ece.addModule(soft);        //Adding created modules, and students to ECE CourseProgramme
+       ece.addModule(soc1);
+       ece.addModule(soc2);
+       ece.addModule(mob);
+       ece.addModule(esap);
+       ece.addModule(dsp);
+
+       ece.addStudent(stud1);
+       ece.addStudent(stud3);
+
+       compsci.addModule(soft);
+       compsci.addModule(mob);
+       compsci.addModule(dsp);
+
+       compsci.addStudent(stud2);
+       compsci.addStudent(stud5);
+
+
+
+        //Start Printing stuff from here on as requested by assignment brief
+
         soft.listStudentsEnrolled();
+        soc1.listStudentsEnrolled();
         soc2.listStudentsEnrolled();
+        mob.listStudentsEnrolled();
+        esap.listStudentsEnrolled();
+        dsp.listStudentsEnrolled();
+
+
+
 
 
     }
