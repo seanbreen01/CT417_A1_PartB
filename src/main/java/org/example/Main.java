@@ -100,7 +100,7 @@ public class Main {
         dsp.addStudent(stud1);    //should return that student is already enrolled
 
 
-        System.out.println("Creating 2 courseProgrammes, one for electronic and computer engineering, and the other for computer science \n hence populating these with modules as needed");
+        System.out.println("\nCreating 2 courseProgrammes, one for electronic and computer engineering, and the other for computer science \nhence populating these with modules as needed");
 
         CourseProgramme ece = new CourseProgramme("Electronic and Computer Engineering", new DateTime(2019,9,5,9,0), new DateTime(2024, 5, 6, 17,0) );
         CourseProgramme compsci = new CourseProgramme("Computer Science", new DateTime(2019,9,5,9,0), new DateTime(2024, 5, 6, 17,0));
@@ -115,6 +115,7 @@ public class Main {
 
         ece.addStudent(stud1);
         ece.addStudent(stud3);
+        ece.addStudent(stud4);
 
         compsci.addModule(soft);
         compsci.addModule(mob);
@@ -126,6 +127,7 @@ public class Main {
 
 
         //Start Printing stuff from here on as requested by assignment brief
+        System.out.println("Have now created and populated all the relevant objects and will now print them to the console");
 
         System.out.println(ece);    //print basic info about ece CourseProgramme, via overridden toString
         System.out.println("Modules associated with ECE Course Programme:");
@@ -148,7 +150,7 @@ public class Main {
         esap.listStudentsEnrolled();
         dsp.listStudentsEnrolled();
 
-
+        System.out.println("End of main");
     }
 
 
