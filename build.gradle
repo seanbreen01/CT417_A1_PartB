@@ -19,7 +19,7 @@ dependencies {
     // https://mvnrepository.com/artifact/org.terasoluna.gfw/terasoluna-gfw-jodatime
     implementation group: 'org.terasoluna.gfw', name: 'terasoluna-gfw-jodatime', version: '5.7.1.SP1.RELEASE'
 
-    implementation 'com.github.seanbreen01:seanbreen01-CT417_A1_PartA:v1.0.0'
+    implementation 'com.github.seanbreen01:seanbreen01-CT417_A1_PartA:v1.0.1'
 }
 
 test {
